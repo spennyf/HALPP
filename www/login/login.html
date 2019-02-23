@@ -1,0 +1,18 @@
+<ion-view title="Login" id="loginPage" class=" ">
+    <ion-content padding="true" class="no-header">
+        <div style="margin: 20px 0; text-align: center;">
+        		HALPP
+        </div>
+        <form id="login-form" class="list ">
+            <label class="item item-input ">
+                <input type="text" placeholder="Email" ng-model="user.EMAIL_ADDRESS">
+            </label>
+            <label class="item item-input ">
+                <input type="password" placeholder="Password" ng-model="user.PASSWORD">
+            </label>
+        </form>
+        <button id="login-button" ng-click="login()" class=" button button-positive  button-block">Login</button>
+        <br>
+        <p ng-click="goSignup()" style="width: 100%; font-size: 1.1em; text-align: center; color:#326082;">Signup</p>
+    </ion-content>
+</ion-view>

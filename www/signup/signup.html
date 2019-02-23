@@ -1,0 +1,22 @@
+<ion-view title="Signup" id="signupPage" class=" ">
+    <ion-content padding="true" class="no-header">
+    <div class="row" style="display: flex; align-items: center; height: 60px; margin-top: 20px;">
+    		<i ng-click="goBack()" class="material-icons" style="font-size: 48px;">arrow_left</i> 
+        <div style="margin: 20px 0; text-align: center;">
+        		HALPP
+        </div>
+    </div>
+        <form id="signup-form" class="list ">
+            <label class="item item-input ">
+                <input type="text" placeholder="Email" ng-model="user.EMAIL_ADDRESS">
+            </label>
+            <label class="item item-input ">
+                <input type="password" placeholder="Password" ng-model="user.PASSWORD">
+            </label>
+        </form>
+        <button id="signup-button" ng-click="join()" class=" button button-positive  button-block">Join</button>
+        <!-- <button id="signup-button" ng-click="createChapter()" class=" button button-positive  button-block">Create New Chapter</button> -->
+        
+        <br>
+    </ion-content>
+</ion-view>

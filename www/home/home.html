@@ -1,0 +1,76 @@
+<ion-view title="Home" class=" ">
+	
+
+    
+    <ion-tabs class="tabs-positive tabs-icon-top">
+	  <ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+	  <ion-nav-view name="home-nav">
+	    <ion-content padding="true">
+	   
+			<br>
+			<div class='container'>
+			<div class="bar bar-header bar-positive">
+			  <h1 class="title">Home</h1>
+			  <!-- <button ng-click="goToProfile()" class="button icon ion-person"></button> -->
+
+			</div>
+			  <div class='panel panel-default' style="margin-top:40px">
+			    <div class='panel-heading text-center panel-relative'>
+			    		<button  ng-click="changeDay('prev')" class='btn' style="position: absolute; left: 25px; top:65px; padding: 0;">
+			    			<i class="material-icons" style="font-size: 48px;">arrow_left</i> 
+			    		</button>
+			    		<button ng-click="changeDay('next')" class='btn' style="position: absolute; right: 25px; top:65px; padding: 0;" >
+						<i class="material-icons" style="font-size: 48px;">arrow_right</i>
+					</button>
+			      	<h4>{{currDateStr}}</h4>
+			    </div>
+			  </div>
+			</div>
+			<div style=" text-align: center;" >
+				<h2 >{{abstainedMsg}}</h2>	
+			</div>	
+			<br />
+			<div style=" text-align: center;"  ng-show="daySelected">
+				<button ng-click="saveDay('U')" class="button btn-sm button-positive"><h4>Undo</h4></button>
+			</div>
+			<div style="height:70px" ng-hide="daySelected">
+				<div class="button-bar">
+				  	<button ng-click="saveDay('N')" class="button button-assertive"><h3>No</h3></button>
+				  	<button ng-click="saveDay('Y')" class="button button-balanced" style="vertical-align: middle;"><h3>Yes</h3></button>
+				</div>
+			</div>
+			<br />
+			<div style=" text-align: center;">
+				<h2>Days abstained MTD:</h2>
+				<h2>{{mtd}}</h2>
+			</div>
+			<div style=" text-align: center;">
+				<h2>Days abstained YTD:</h2>
+				<h2>{{ytd}}</h2>
+			</div>
+	    </ion-content>
+	    </ion-nav-view> 
+	  </ion-tab>
+	  <ion-tab on-select="viewUsersTab()" title="Users" icon-on="ion-android-contacts" icon-off="ion-android-contacts">
+	    <ion-nav-view name="users-nav">
+	    <ion-content padding="true">
+	    		<div class="bar bar-header bar-positive">
+			  <h1 class="title">Users</h1>
+			   <!-- <button class="button icon ion-person" ng-click="goToProfile()"></button> -->
+			</div>
+	    		<ion-list style="position: absolute; top: 45px; width:100%;">
+				<ion-item ng-repeat="res in results">
+			    		{{res.EMAIL}}
+			    		<br/>
+			    		MTD Abstained: {{resultsMonth[$index].DAYS_ABSTAINED}}
+			    		<br/>
+			    		YTD Abstained: {{res.DAYS_ABSTAINED}}
+			  	</ion-item>
+			</ion-list>
+    		</ion-content>
+    		</ion-nav-view> 
+	  </ion-tab>
+	  
+	</ion-tabs>
+	
+</ion-view>

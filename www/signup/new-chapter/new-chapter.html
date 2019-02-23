@@ -1,0 +1,20 @@
+<ion-view title="New Chapter" id="newChapterPage" class=" ">
+    <ion-content padding="true" class="no-header">
+        <div style="margin: 20px 0; text-align: center;">
+        		New Chapter
+        </div>
+        <form id="signup-form" class="list ">
+            <label class="item item-input ">
+                <input type="text" placeholder="Chapter Name" ng-model="user.CHAPTER_NAME">
+            </label>
+            <label class="item item-input ">
+                <input type="number" placeholder="Abstention Goal" ng-model="user.ABSTAIN_GOAL">
+            </label>
+            
+            
+        </form>
+        <button id="signup-button" ng-click="signup()" class=" button button-positive  button-block">Signup</button>
+        
+        <br>
+    </ion-content>
+</ion-view>
